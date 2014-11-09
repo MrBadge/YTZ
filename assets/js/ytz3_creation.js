@@ -24,10 +24,21 @@ $(document).ready(function() {
     });
 
     $(document).keydown(function(evt) {
-        if (evt.keyCode == 32) {
-            evt.preventDefault();
-            var tmp = $('.editable-input textarea').val()
-            $('.editable-input textarea').val(tmp + " ");
+      var tmp = $('.editable-input textarea');
+        if ($('.editable-input textarea').length)
+            if (evt.keyCode == 32) {
+                //console.log($(this));
+                evt.preventDefault();
+                var tmp = $('.editable-input textarea').val()
+                $('.editable-input textarea').val(tmp + " ");
+            }
+        if ($('.input-sm').length){
+          if (evt.keyCode == 32) {
+                //console.log($(this));
+                evt.preventDefault();
+                var tmp = $('.input-sm').val()
+                $('.input-sm').val(tmp + " ");
+            }
         }
     });
 
