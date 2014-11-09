@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>УТЗ</title>
+    <meta name="generator" content="Bootply">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/ytz1.css" rel="stylesheet">
+    <link href="assets/css/ytz2.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    <link href="assets/css/holo.css" rel="stylesheet">
+</head>
+
+<!-- HTML code from Bootply.com editor -->
+
+<body>
+
+    <div class="page-container">
+
+        <!-- top navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://usebootstrap.com/theme/holo">Bootstrap Holo</a>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="row row-offcanvas row-offcanvas-left">
+
+                <!-- sidebar -->
+                <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                    <div class="affix-top" data-spy="affix" data-offset-top="45" data-offset-bottom="90">
+                        <ul class="nav" id="sidebar-nav">
+                            <li><a href="#ytz1">Ввод ответа из перечня</a>
+                            </li>
+                            <li><a href="#ytz2">Построение связей между элементами</a>
+                            </li>
+                            <li><a href="#ytz3">Расстановка соответствий</a>
+                            </li>
+                            <li><a href="#ytz4">Корректировка текста</a>
+                            </li>
+                            <li><a href="#ytz5">Пропуски в тексте</a>
+                            </li>
+                            <li><a href="#ytz6">Упорядочивание изображений</a>
+                            </li>
+                            <li><a href="#ytz7">Анализ изображений</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- main area -->
+                <div class="col-xs-10 col-sm-7" data-spy="scroll" data-target="#sidebar-nav">
+
+                    <div class="row">
+                        <h2 id="ytz1">Ввод ответа из перечня</h2>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>Вопрос</h4>
+                            </div>
+                            <div class="panel-body">
+                                <ul id=answers class="list-group radio_group">
+                                    <li class="list-group-item">
+                                        <span href="#" class="btn-group btn-toggle pull-left">
+                                            <button class="btn btn-xs btn-default answer">
+                                                <i class="fa fa-circle-o"></i>
+                                            </button>
+                                        </span>
+                                        <span class="answer">
+                                            Ответ 1
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span href="#" class="btn-group btn-toggle pull-left">
+                                            <button class="btn btn-xs btn-default answer">
+                                                <i class="fa fa-circle-o"></i>
+                                            </button>
+                                        </span>
+                                        <span class="answer">
+                                            Ответ 2
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span href="#" class="btn-group btn-toggle pull-left">
+                                            <button class="btn btn-xs btn-default answer">
+                                                <i class="fa fa-circle-o"></i>
+                                            </button>
+                                        </span>
+                                        <span class="answer">
+                                            Ответ 3
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary pull-right">Далее</button>
+                        <hr>
+                    </div>
+
+                    <div class="row">
+                        <h2 id="ytz2">Построение связей между элементами графического представления</h2>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>Вопрос</h4>
+                            </div>
+                            <div id="ytz2_canvas" class="panel-body">
+
+                            </div>
+                        </div>
+                        <!-- /.col-xs-12 main -->
+                    </div>
+                    <!--/.row-->
+                </div>
+                <!--/container-->
+            </div>
+            <!--/footer-->
+        </div>
+
+
+        <div id="push"></div>
+
+        <script type="text/javascript" async="" src="assets/js/quant.js"></script>
+        </script>
+        <script type="text/javascript" src="assets/js/jquery.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/cy/cytoscape.min.js"></script>
+        <script type="text/javascript" src="assets/js/ytz1.js"></script>
+        <script type="text/javascript" src="assets/js/ytz2.js"></script>
+
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+
+            //$('.btn-toggle').click(function() {
+            //    $(this).find('.btn').toggleClass('active').toggleClass('btn-default').toggleClass('btn-primary');
+            //});
+        });
+        </script>
+
+
+</body>
+
+</html>

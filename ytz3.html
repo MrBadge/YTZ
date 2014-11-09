@@ -1,0 +1,184 @@
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap-editable.css" rel="stylesheet">
+<link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+<link href="assets/css/ytz3_creation.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/css/ytz3_usage.css">
+<!--<link href="assets/css/ytz3_usage.css" rel="stylesheet">-->
+<!--<link href="assets/css/easyui.css" rel="stylesheet">-->
+
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap-editable.min.js"></script>
+<script type="text/javascript" src="assets/js/ytz3_creation.js"></script>
+<script type="text/javascript" src="assets/js/ytz3_usage.js"></script>
+
+<div class="col-md-8 col-sm-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>YTZ3</h4>
+        </div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs">
+                <li class=""><a href="#A" data-toggle="tab">Creation</a>
+                </li>
+                <li class="active"><a href="#B" data-toggle="tab">Usage</a>
+                </li>
+            </ul>
+            <div class="tabbable">
+                <div class="tab-content">
+                    <div class="tab-pane" id="A">
+                        <div class="well well-sm">
+                            <table class="table table-hover" style=" font-size: 14px; " id="table">
+                                <colgroup>
+                                    <col span="1" style="width: 42%;">
+                                        <col span="1" style="width: 8%">
+                                            <col span="1" style="width: 42%;">
+                                                <col span="1" style="width: 8%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">
+                                            <center>Create/edit task here</center>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rows">
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-default task">
+                                                <small><a href="#" data-pk="1" class="edit_task" data-type="text" data-title="Department name" data-empty="Empty" data-name="department">Title</a>
+                                                </small>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <center>
+                                                <-->
+                                            </center>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-default task">
+                                                <small><a href="#" data-pk="1" class="edit_task" data-type="text" data-title="Department name" data-empty="Empty" data-name="department">Title</a>
+                                                </small>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <small>
+                                                <center>
+                                                    <button id="row_del" type="button" class="btn btn-danger btn-xs del" style="display: inline-block;" value="1">del</button>
+                                                </center>
+                                            </small>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>
+                                            <center>
+                                                <button class="btn btn-default settings_button" id="add_row">
+                                                    +
+                                                </button>
+                                            </center>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <center>
+                                                <button class="btn btn-default settings_button">
+                                                    <small>
+                                                        Complexity level:
+                                                        <a href="#" id="level" data-type="select" data-pk="1" data-title="Select comlexity level"></a>
+                                                    </small>
+                                                </button>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <center>
+                                                <button class="btn btn-default settings_button">
+                                                    <small>
+                                                        <a href="#" id="hint" data-type="textarea" data-pk="1">Hint</a>
+                                                    </small>
+                                                </button>
+                                            </center>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <center>
+                                                <button class="btn btn-info settings_button" id="done">
+                                                    Done
+                                                </button>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane active" id="B">
+                        <div class="well well-sm">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <table class="table table-hover" style=" font-size: 14px; " id="task_table">
+                                        <colgroup>
+                                            <col span="1" style="width: 40%;">
+                                                <col span="1" style="width: 10%">
+                                                    <col span="1" style="width: 40%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3">
+                                                    <center>Task</center>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td>
+                                                    <button class="btn btn-default settings_button" style="width: 100%">
+                                                        <small>
+                                                            <a href="#" id="task_hint">Hint</a>
+                                                        </small>
+                                                    </button>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <button class="btn btn-default settings_button" id="task_done" style="width: 100%">
+                                                        <small>
+                                                            <a href="#">Done</a>
+                                                        </small>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="table table-hover" id="variants">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <center>Variants</center>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="container" style="width: 600px">
+
+</div>
