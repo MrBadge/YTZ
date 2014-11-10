@@ -6,6 +6,11 @@
 	height:100px; 
 }
 
+[contenteditable] strong {
+    font-weight: normal;
+    background: red;
+    color: white;
+}
 .settings_button {
 	width: 100%
 }

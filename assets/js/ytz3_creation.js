@@ -24,7 +24,7 @@ $(document).ready(function() {
     });
 
     $(document).keydown(function(evt) {
-      var tmp = $('.editable-input textarea');
+      //var tmp = $('.editable-input textarea');
         if ($('.editable-input textarea').length)
             if (evt.keyCode == 32) {
                 //console.log($(this));
