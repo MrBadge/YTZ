@@ -23,13 +23,6 @@ $(document).ready(function() {
         }]
     });
 
-
-    $('.task').click(function(e) {
-        e.stopPropagation();
-        console.log($(this).first());
-        $(this).first().editable('toggle');
-    });
-        
     $(document).keydown(function(evt) {
       //var tmp = $('.editable-input textarea');
         if ($('.editable-input textarea').length)
