@@ -36,7 +36,16 @@ $(document).ready(function() {
 
     $(document).on('click', '#done', function() {
         task.selections = selections;
-        console.log(JSON.stringify(task));
+        task.hint = $('#hint').text;
+        task.level =
+        $.ajax({
+            type: "POST",
+            url: "/filling_utz",
+            data: task,
+            success: function(msg){
+                alert( "Task was successfully created" );
+            }
+        });
     });
 
     $(document).on('click', '#prev_step', function() {

@@ -3,7 +3,7 @@ class CreateTestUtzAnswers < ActiveRecord::Migration
     create_table :test_utz_answers do |t|
       t.text :text
       t.boolean :is_correct
-      t.references :test_utz_question_id, index: true
+      t.references :test_utz_question, index: true
 
       t.timestamps null: false
     end

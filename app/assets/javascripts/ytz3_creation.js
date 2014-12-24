@@ -70,7 +70,14 @@ $(document).ready(function() {
         //var tmp = $('#level').editable();
         json.hint = $('#hint')[0].text;
         json.level = $('#level').editable()[0].text; //change this into id
-        alert(JSON.stringify(json));
+        $.ajax({
+            type: "POST",
+            url: "/matching_utz",
+            data: json,
+            success: function(msg){
+                alert( "Task was successfully created" );
+            }
+        });
     });
 
     $('body').on('click', 'button#row_del', function(event) {

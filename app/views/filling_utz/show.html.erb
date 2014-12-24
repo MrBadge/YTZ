@@ -1,2 +1,31 @@
-<h1>FillingUtz#show</h1>
-<p>Find me in app/views/filling_utz/show.html.erb</p>
+<div class="col-md-12 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>YTZ5</h4>
+    </div>
+    <div class="panel-body">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#B" data-toggle="tab">
+            Usage
+          </a>
+        </li>
+      </ul>
+      <div class="tabbable">
+        <div class="tab-content">
+          <div class="tab-pane active" id="B">
+            <div class="well well-sm">
+              <%= text_with_editable_links(@utz.text, @utz.intervals) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Back', root_path %>
+
+<% content_for :head do %>
+    <%= javascript_include_tag "ytz5_usage", "data-turbolinks-track" => true %>
+<% end %>

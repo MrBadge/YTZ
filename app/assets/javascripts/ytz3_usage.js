@@ -14,12 +14,7 @@ $(document).ready(function() {
             $('#task_table tbody').append('<tr><td><div><button class="btn btn-default answer"><small>' + task.left[i] + '</small></button></div></td><td><center><--></center></td><td class="drop"></td></tr>');
             $('#variants tbody').append('<tr><td><div class="item"><button class="btn btn-default answer"><small>' + shufled_arr[i] + '</small></button></div></td></tr>');
         };
-        $('#task_hint').tooltip({
-            title: task.hint
-        });
     }
-
-    parseJSON(json);
 
     $('.item').draggable({
         revert: true,
@@ -54,20 +49,21 @@ $(document).ready(function() {
         var right = [];
         for (var i = 0; i < data.length; ++i) {
         	var cells = data[i].cells;
-            left.push(cells[0].textContent);
-            right.push(cells[2].textContent);
+            left.push(cells[0].textContent.trim());
+            right.push(cells[2].textContent.trim());
         }
         ans.left = left;
         ans.right = right;
-        console.log(ans);
-        var task = jQuery.parseJSON(json);
-        for (var i = 0; i < task.right.length; ++i) {
-        	if (task.right[i] != ans.right[i]){
-        		alert("Wrong!");
-        		return;
-        	}
-        };
-        alert("Right!");
+
+
+        $.ajax({
+            type: "POST",
+            url: "/matching_utz/" + $('#utz_id').val() + "/check_answers",
+            data: ans,
+            success: function(msg){
+                alert( msg );
+            }
+        });
     });
 
     $('body').on('click', '#task_hint', function(event) {

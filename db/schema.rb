@@ -11,14 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215043409) do
+ActiveRecord::Schema.define(version: 20141224045453) do
+
+  create_table "filling_utz_answers", force: true do |t|
+    t.string   "text"
+    t.integer  "filling_utz_interval_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "filling_utz_answers", ["filling_utz_interval_id"], name: "index_filling_utz_answers_on_filling_utz_interval_id"
 
   create_table "filling_utz_intervals", force: true do |t|
     t.integer  "start"
     t.integer  "end"
     t.string   "answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "filling_utz_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "filling_utzs", force: true do |t|
@@ -27,6 +37,7 @@ ActiveRecord::Schema.define(version: 20141215043409) do
     t.integer  "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "text"
   end
 
   create_table "matching_utz_answers", force: true do |t|
@@ -47,6 +58,22 @@ ActiveRecord::Schema.define(version: 20141215043409) do
     t.string   "name"
     t.text     "hint"
     t.integer  "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "test_utz_answers", force: true do |t|
+    t.text     "text"
+    t.boolean  "is_correct"
+    t.integer  "test_utz_question_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "test_utz_answers", ["test_utz_question_id"], name: "index_test_utz_answers_on_test_utz_question_id"
+
+  create_table "test_utz_questions", force: true do |t|
+    t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

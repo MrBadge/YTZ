@@ -1,2 +1,56 @@
-<h1>TestUtzQuestions#show</h1>
-<p>Find me in app/views/test_utz_questions/show.html.erb</p>
+<div class="col-md-12 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>YTZ1</h4>
+    </div>
+    <div class="panel-body">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#B" data-toggle="tab">Usage</a>
+        </li>
+      </ul>
+      <div class="tabbable">
+        <div class="tab-content">
+          <div class="tab-pane active" id="B">
+            <div class="well well-sm">
+              <table class="table table-hover" style=" font-size: 14px; " id="table">
+                <colgroup>
+                  <col span="1" style="width: 15%;">
+                  <col span="1" style="width: 85%">
+                </colgroup>
+                <thead>
+                <tr>
+                  <th colspan="3">
+                    <center id="question_title_usage" question_id="">
+                      Question
+                    </center>
+                  </th>
+                </tr>
+                </thead>
+                <tbody id="test_rows">
+
+                </tbody>
+                <tfoot>
+                <tr>
+                  <td></td>
+                  <td>
+                    <center>
+                      <button class="btn btn-info settings_button" id="test_done">
+                        Done
+                      </button>
+                    </center>
+                  </td>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :head do %>
+    <%= stylesheet_link_tag    "ytz5_creation", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "ytz5_usage", "data-turbolinks-track" => true %>
+<% end %>
