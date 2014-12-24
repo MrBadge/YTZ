@@ -64,7 +64,7 @@ $(document).ready(function() {
         for (var i = 0; i < task.right.length; ++i) {
         	if (task.right[i] != ans.right[i]){
         		alert("Wrong!");
-        		break;
+        		return;
         	}
         };
         alert("Right!");
