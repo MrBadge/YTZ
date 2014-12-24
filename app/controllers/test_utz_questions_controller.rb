@@ -3,12 +3,12 @@ class TestUtzQuestionsController < ApplicationController
   end
 
   def create
-    question = TestUtzQuestion.create text: params[:question]
+    question = TestUtzQuestion.create text: params['question']
 
-    answers = params[:answers]
+    answers = params['answers']
 
     answers.each_value do |answer|
-      TestUtzAnswer.create text: answer['text'], is_correct: params['correct'], test_utz_question_id: question.id
+      TestUtzAnswer.create text: answer['text'], is_correct: answer['correct'].to_bool, test_utz_question_id: question.id
     end
 
     render nothing: true

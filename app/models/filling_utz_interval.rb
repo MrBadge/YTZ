@@ -1,5 +1,5 @@
 class FillingUtzInterval < ActiveRecord::Base
-  has_many :filling_utz_answers
+  has_many :filling_utz_answers, dependent: :destroy
   belongs_to :filling_utz
 
   def answers
