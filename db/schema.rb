@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224045453) do
+ActiveRecord::Schema.define(version: 20141226084654) do
 
   create_table "filling_utz_answers", force: true do |t|
     t.string   "text"
@@ -76,6 +76,16 @@ ActiveRecord::Schema.define(version: 20141224045453) do
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "text_correction_utzs", force: true do |t|
+    t.string   "name"
+    t.text     "text_with_errors"
+    t.text     "text_without_errors"
+    t.integer  "errors_count"
+    t.string   "hint"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end

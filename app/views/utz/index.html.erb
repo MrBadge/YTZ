@@ -6,3 +6,6 @@
 
 <%= render partial: 'utz', locals: {:controller => :filling_utz, :collection => FillingUtz.all,
                                     :utz_header => 'Заполнение пропусков в тексте'} %>
+
+<%= render partial: 'utz', locals: {:controller => :text_correction_utz, :collection => TextCorrectionUtz.all,
+                                    :utz_header => 'Маркировки или корректировки текста'} %>

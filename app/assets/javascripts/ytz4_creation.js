@@ -58,7 +58,15 @@ $(document).ready(function() {
         json.text_without_errors = b.value;
         json.errors_count = $('#errors_count')[0].innerText;
         json.hint = $('#hint')[0].text;
-        alert(JSON.stringify(json));
+
+        $.ajax({
+            type: "POST",
+            url: "/text_correction_utz",
+            data: json,
+            success: function(msg){
+                alert( "Task was successfully created" );
+            }
+        });
     });
 
 });
