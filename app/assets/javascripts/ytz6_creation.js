@@ -24,20 +24,20 @@ $(document).ready(function() {
         draggable: ".drag"
     });
 
-    $('input:file').each(function() {
+    /*$('input:file').each(function() {
         //$this = $(this);
         //console.log($this);
         $img = $(this).closest('tr').find('.preview-img');
         console.log($img);
         console.log('-----------------');
         $(this).change(function() {
-            console.log($(this));   
+            console.log($(this));
             $img = $(this).closest('tr').find('.preview-img');
             //console.log($(this));
             console.log($img);
             $(this).previewImg($img);
         });
-    });
+    });*/
 
     $('.edit_task').editable();
     $('#level').editable({
@@ -90,8 +90,17 @@ $(document).ready(function() {
     $("#add_row").click(function() {
         $tr = $('<tr class="drag"><td><center><a href="#" class="image_add">+</a></center></td><td><img class="preview-img"></td><td><input type="file" name="images[]" style="opacity: 0; width: 0; height: 0"></td><td><center><small><button id="row_del" type="button" class="btn btn-danger btn-xs del" value="1">del</button></small></center></td></tr>');
         $("#rows").append($tr);
-        $tr.find('input:file').previewImg()
+        //$img = $tr.find('.preview-img');
+        //$tr.find('input:file').previewImg($img);
+        $tr.find('input:file').change(function() {
+            console.log($(this));
+            $img = $(this).closest('tr').find('.preview-img');
+            //console.log($(this));
+            console.log($img);
+            $(this).previewImg($img);
+        });
         $("#table tbody tr:last .edit_task").editable();
+
     });
 
     $('body').on('click', 'button#row_del', function(event) {
