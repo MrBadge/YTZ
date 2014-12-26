@@ -1,0 +1,25 @@
+.question_title{
+   width: 500px;
+}
+
+.image_add {
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: inline-block;
+	border: 1px solid; 
+	border-radius: 10px;
+}
+
+.del {
+	display: inline-block;
+}
+
+.task {
+    width: 100%
+}
+
+.settings_button {
+  width: 80%
+}
