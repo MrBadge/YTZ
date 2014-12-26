@@ -54,8 +54,8 @@ $(document).ready(function() {
         var right = [];
         for (var i = 0; i < data.length; ++i) {
         	var cells = data[i].cells;
-            left.push(cells[0].textContent);
-            right.push(cells[2].textContent);
+            left.push(cells[0].textContent.trim());
+            right.push(cells[2].textContent.trim());
         }
         ans.left = left;
         ans.right = right;
