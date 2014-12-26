@@ -8,6 +8,15 @@ $(document).ready(function() {
         emptytext: 'Введите подсказку'
     });
 
+    $(document).keydown(function(evt) {
+        if ($('.editable-input textarea').length)
+            if (evt.keyCode == 32) {
+                evt.preventDefault();
+                var tmp = $('.editable-input textarea').val()
+                $('.editable-input textarea').val(tmp + " ");
+            }
+    });
+    
     var a = document.getElementById('errors_text');
     var b = document.getElementById('errors_free_text');
     var result = document.getElementById('diff_result');
@@ -64,7 +73,7 @@ $(document).ready(function() {
             url: "/text_correction_utz",
             data: json,
             success: function(msg){
-                alert( "Task was successfully created" );
+                alert( "Задание создано успешно" );
             }
         });
     });

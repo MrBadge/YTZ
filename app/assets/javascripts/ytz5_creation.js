@@ -8,8 +8,9 @@ $(document).ready(function() {
     $('#hint').editable({
         url: '',
         mode: 'popup',
-        title: 'Enter hint',
-        rows: 5
+        title: 'Введите подсказку',
+        rows: 5,
+        emptytext: 'Введите подсказку'
     });
 
     $(document).keydown(function(evt) {
@@ -27,8 +28,8 @@ $(document).ready(function() {
         var tmp2 = $('#task')[0];
         if ($('#task')[0].innerText != "") {
             $('#task')[0].contentEditable = false;
-            $('#step1').replaceWith('<div id="step2"><div class="col-md-3 nav_buttons"><center><button class="btn btn-default settings_button" id="prev_step">Prev step</button></center></div><div class="col-md-3 nav_buttons"><center><button class="btn btn-default settings_button" id="done">Done</button></center></div></div>');
-            $(this).text('Done');
+            $('#step1').replaceWith('<div id="step2"><div class="col-md-3 nav_buttons"><center><button class="btn btn-default settings_button" id="prev_step">Назад</button></center></div><div class="col-md-3 nav_buttons"><center><button class="btn btn-default settings_button" id="done">Создать</button></center></div></div>');
+            $(this).text('Создать');
             step = 2;
             task.text = $('#task')[0].innerText;
         }
@@ -43,7 +44,7 @@ $(document).ready(function() {
             url: "/filling_utz",
             data: task,
             success: function(msg){
-                alert( "Task was successfully created" );
+                alert( "Задание создано успешно" );
             }
         });
     });
@@ -51,7 +52,7 @@ $(document).ready(function() {
     $(document).on('click', '#prev_step', function() {
         //event.preventDefault();
         $('#task')[0].contentEditable = true;
-        $('#step2').replaceWith('<div class="col-md-6 nav_buttons" id="step1"><center><button class="btn btn-default settings_button" id="next_step">Next step</button></center></div>');
+        $('#step2').replaceWith('<div class="col-md-6 nav_buttons" id="step1"><center><button class="btn btn-default settings_button" id="next_step">Следующий шаг</button></center></div>');
         $("#task").html(function() {
             return $(this).html().replace(/<\/?strong>/g, "");
         });
@@ -132,15 +133,15 @@ $(document).ready(function() {
                     $('#task').html(saved_html);
                 }*/
                 bootbox.dialog({
-                    title: "Type all variants here",
+                    title: "Введите возможные варианты ответов",
                     message: '<div class="row">  ' +
                         '<div class="col-md-12"> ' +
                         '<form class="form-horizontal"> ' +
                         '<div class="form-group"> ' +
-                        '<label class="col-md-3 control-label">Possible answers</label> ' +
+                        '<label class="col-md-3 control-label">Варианты ответов</label> ' +
                         '<div class="col-md-7"> ' +
-                        '<textarea id="variants" rows="6" class="editable form-control row-fluid" placeholder="Your variants goes here" style="resize: vertical; overflow: auto;">' + data + '</textarea>' +
-                        '<span class="help-block">First line will be the right answer!<br>Each one from new line</span> </div> ' +
+                        '<textarea id="variants" rows="6" class="editable form-control row-fluid" placeholder="Введите здесь варианты ответов" style="resize: vertical; overflow: auto;">' + data + '</textarea>' +
+                        '<span class="help-block">Ответ в первой строке считается верным!<br>Каждый вариант с новой строки</span> </div> ' +
                         '</div> ' +
                         '</form> </div>  </div>',
                     onEscape: function() {
@@ -148,7 +149,7 @@ $(document).ready(function() {
                     },
                     buttons: {
                         success: {
-                            label: "Save",
+                            label: "Сохранить",
                             className: "btn-success",
                             callback: function() {
                                 var variants = $('#variants').val().split('\n');
