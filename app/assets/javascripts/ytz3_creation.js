@@ -13,13 +13,13 @@ $(document).ready(function() {
         value: 1,
         source: [{
             value: 0,
-            text: 'Easy'
+            text: 'Легкий'
         }, {
             value: 1,
-            text: 'Medium'
+            text: 'Средний'
         }, {
             value: 2,
-            text: 'Hard'
+            text: 'Сложный'
         }]
     });
 
@@ -45,8 +45,9 @@ $(document).ready(function() {
     $('#hint').editable({
         url: '',
         mode: 'popup',
-        title: 'Enter hint',
-        rows: 5
+        title: 'Введите подсказку',
+        rows: 5,
+        emptytext: 'Введите подсказку'
     });
 
     $("#add_row").click(function() {
@@ -75,7 +76,7 @@ $(document).ready(function() {
             url: "/matching_utz",
             data: json,
             success: function(msg){
-                alert( "Task was successfully created" );
+                alert( "Задание создано успешно" );
             }
         });
     });
