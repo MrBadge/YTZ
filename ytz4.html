@@ -1,0 +1,77 @@
+<meta charset="UTF-8">
+
+<link href="app/assets/stylesheets/bootstrap.css" rel="stylesheet">
+<link href="app/assets/stylesheets/bootstrap-editable.css" rel="stylesheet">
+<link href="app/assets/stylesheets/jquery-ui.min.css" rel="stylesheet">
+<link href="app/assets/stylesheets/ytz4_creation.css" rel="stylesheet">
+<!--<link rel="stylesheet" type="text/css" href="app/assets/stylesheets/ytz4_usage.css">-->
+
+<script type="text/javascript" src="app/assets/javascripts/jquery.js"></script>
+<script type="text/javascript" src="app/assets/javascripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="app/assets/javascripts/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="app/assets/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="app/assets/javascripts/bootstrap-editable.min.js"></script>
+<script type="text/javascript" src="app/assets/javascripts/diff.js"></script>
+<script type="text/javascript" src="app/assets/javascripts/ytz4_creation.js"></script>
+<!--<script type="text/javascript" src="app/assets/javascripts/ytz4_usage.js"></script>-->
+
+<div class="col-md-8 col-sm-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Маркировки или корректировки текста</h4>
+        </div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#A" data-toggle="tab">Создание</a>
+                </li>
+                <li class=""><a href="#B" data-toggle="tab">Использование</a>
+                </li>
+            </ul>
+            <div class="tabbable">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="A">
+                        <div class="well well-sm" id="task_area">
+                            <div class="form-group">
+                                <label for="errors_text">Введите текст для студента:</label>
+                                <textarea class="form-control original" rows="6" id="errors_text"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="errors_free_text">Введите исправленный текст:</label>
+                                <textarea class="form-control changed" rows="6" id="errors_free_text"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="diff_result">Визуализация ошибок:</label>
+                                <p id="diff_result">
+
+                                </p>
+                            </div>
+                            
+                                <button class="btn btn-default">
+                                    <small>
+                                        <a href="#" id="hint" data-type="textarea" data-pk="1">
+                                            
+                                        </a>
+                                    </small>
+                                </button>
+                                <button class="btn btn-default pull-right" id="done">
+                                    Создать
+                                </button>
+                                
+                                <label>
+                                    Количество ошибок:
+                                </label>
+                                <label id="errors_count">
+                                    
+                                </label>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="B">
+                        <div class="well well-sm">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
