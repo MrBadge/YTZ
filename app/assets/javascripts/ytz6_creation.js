@@ -1,6 +1,8 @@
 $.fn.previewImg = function(img) {
     $input = $(this);
+    console.log('previewImg start');
     console.log($(this));
+    console.log('previewImg end');
     if ($input.prop('files') && $input.prop('files')[0]) {
         reader = new FileReader();
         reader.onload = function(e) {
@@ -87,16 +89,23 @@ $(document).ready(function() {
         $(this).closest('tbody').find('input:file').click();
     });
 
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+
     $("#add_row").click(function() {
-        $tr = $('<tr class="drag"><td><center><a href="#" class="image_add">+</a></center></td><td><img class="preview-img"></td><td><input type="file" name="images[]" style="opacity: 0; width: 0; height: 0"></td><td><center><small><button id="row_del" type="button" class="btn btn-danger btn-xs del" value="1">del</button></small></center></td></tr>');
+        var rand = getRandomInt(0, 10000000);
+        $tr = $('<tr class="drag"><td><center><a href="#" class="image_add">+</a></center></td><td><img class="preview-img"></td><td><input id="' + rand + '" type="file" name="images[]" style="opacity: 0; width: 0; height: 0"></td><td><center><small><button id="row_del" type="button" class="btn btn-danger btn-xs del" value="1">del</button></small></center></td></tr>');
         $("#rows").append($tr);
         //$img = $tr.find('.preview-img');
         //$tr.find('input:file').previewImg($img);
         $tr.find('input:file').change(function() {
+        //$('#rand input:file').change(function() {
             console.log($(this));
             $img = $(this).closest('tr').find('.preview-img');
             //console.log($(this));
-            console.log($img);
+            //console.log($img);
             $(this).previewImg($img);
         });
         $("#table tbody tr:last .edit_task").editable();
