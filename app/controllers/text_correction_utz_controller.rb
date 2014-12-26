@@ -16,6 +16,11 @@ class TextCorrectionUtzController < ApplicationController
     @utz = TextCorrectionUtz.find params[:id]
   end
 
+  def check_answer
+    utz = TextCorrectionUtz.find params[:id]
+    render text: (utz.text_without_errors == params[:answer] ? 'Верно' : 'Ошибка')
+  end
+
   def destroy
     TextCorrectionUtz.find(params[:id]).destroy
     redirect_to root_path

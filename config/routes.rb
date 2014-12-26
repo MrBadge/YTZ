@@ -14,6 +14,6 @@ YTZ::Application.routes.draw do
   end
 
   resources :text_correction_utz do
-    post :check_answers, on: :member
+    post :check_answer, on: :member
   end
 end
