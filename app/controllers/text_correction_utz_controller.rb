@@ -3,7 +3,7 @@ class TextCorrectionUtzController < ApplicationController
   end
 
   def create
-    TextCorrectionUtz.create name: 'Task ' + (TextCorrectionUtz.count + 1).to_s,
+    TextCorrectionUtz.create name: 'Задание ' + (TextCorrectionUtz.count + 1).to_s,
                        errors_count: params[:errors_count],
                        text_with_errors: params[:text_with_errors],
                        text_without_errors: params[:text_without_errors],
