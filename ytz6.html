@@ -32,9 +32,9 @@
                             <table class="table table-hover" style=" font-size: 14px; " id="table">
                                 <colgroup>
                                     <col span="1" style="width: 10%;">
-                                    <col span="1" style="width: 50%;">
-                                        <col span="1" style="width: 5%;">
-                                            <col span="1" style="width: 35%;">
+                                        <col span="1" style="width: 50%;">
+                                            <col span="1" style="width: 5%;">
+                                                <col span="1" style="width: 35%;">
                                 </colgroup>
                                 <thead>
                                     <tr>
@@ -135,7 +135,61 @@
                     </div>
                     <div class="tab-pane" id="B">
                         <div class="well well-sm">
-                            
+                            <table class="table table-hover" style=" font-size: 14px; " id="table">
+                                <colgroup>
+                                    <col span="1" style="width: 50%;">
+                                        <col span="1" style="width: 50%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">
+                                            <center>
+                                                <button class="btn btn-default task">
+                                                    <small>
+                                                        Тема задания
+                                                </small>
+                                                </button>
+                                            </center>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">
+                                            <center>
+                                                <button class="btn btn-default task">
+                                                    <small>
+                                                        Цель задания
+                                                </small>
+                                                </button>
+                                            </center>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usage_rows">
+                                    <tr class="drag">
+                                        <td colspan="2">
+                                            <img class="preview-img" draggable="false" src="" id="">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-default settings_button" style="width: 100%">
+                                                <small>
+                                                            <a href="#" id="task_hint">Подсказка</a>
+                                                        </small>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-default settings_button" id="task_done" style="width: 100%">
+                                                <small>
+                                                            <a href="#">Готово</a>
+                                                        </small>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                 </div>
