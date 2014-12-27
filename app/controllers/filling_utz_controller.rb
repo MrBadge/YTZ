@@ -4,7 +4,7 @@ class FillingUtzController < ApplicationController
   end
 
   def create
-    level_dict = {'' => 0, 'Easy' => 1, 'Medium' => 2, 'Hard' => 3}
+    level_dict = {'Легкий' => 1, 'Средний' => 2, 'Сложный' => 3}
 
     utz = FillingUtz.create name: 'Task ' + (FillingUtz.count + 1).to_s, hint: params['hint'],
                             level: level_dict[params['level']],

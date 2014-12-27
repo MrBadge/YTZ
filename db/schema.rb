@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226084654) do
+ActiveRecord::Schema.define(version: 20141227090238) do
 
   create_table "filling_utz_answers", force: true do |t|
     t.string   "text"
@@ -38,6 +38,25 @@ ActiveRecord::Schema.define(version: 20141226084654) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "text"
+  end
+
+  create_table "images_sort_utz_pictures", force: true do |t|
+    t.text     "src"
+    t.integer  "ordering"
+    t.integer  "images_sort_utz_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "images_sort_utz_pictures", ["images_sort_utz_id"], name: "index_images_sort_utz_pictures_on_images_sort_utz_id"
+
+  create_table "images_sort_utzs", force: true do |t|
+    t.text     "goal"
+    t.text     "theme"
+    t.string   "hint"
+    t.integer  "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "matching_utz_answers", force: true do |t|

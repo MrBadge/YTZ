@@ -9,3 +9,6 @@
 
 <%= render partial: 'utz', locals: {:controller => :text_correction_utz, :collection => TextCorrectionUtz.all,
                                     :utz_header => 'Маркировки или корректировки текста'} %>
+
+<%= render partial: 'utz', locals: {:controller => :images_sort_utz, :collection => ImagesSortUtz.all,
+                                    :utz_header => 'Упорядочивание графических изображений'} %>
