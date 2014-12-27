@@ -1,3 +1,4 @@
+#coding=utf-8
 class FillingUtzController < ApplicationController
 
   def new

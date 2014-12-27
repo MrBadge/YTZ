@@ -1,3 +1,4 @@
+#coding=utf-8
 class MatchingUtzController < ApplicationController
   def create
     level_dict = {'Легкий' => 1, 'Средний' => 2, 'Сложный' => 3}

@@ -1,3 +1,4 @@
+#coding=utf-8
 class ImagesSortUtzController < ApplicationController
   def new
   end
