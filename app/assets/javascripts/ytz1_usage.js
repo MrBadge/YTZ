@@ -4,6 +4,7 @@ $(document).ready(function() {
         for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
         return o;
     };
+    
 //    function parseJSON(json) {
 //        var task = jQuery.parseJSON(json);
 //        var shufled_arr = shuffle(task.answers);

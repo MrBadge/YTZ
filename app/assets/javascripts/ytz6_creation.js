@@ -120,6 +120,7 @@ $(document).ready(function() {
     });
 
     $("#done").click(function() {
+        $(this).toggleClass('active');
         var rows = $("#rows tr");
         //var counter = 1;
         var json = {};
@@ -140,7 +141,11 @@ $(document).ready(function() {
             url: "/images_sort_utz",
             data: json,
             success: function(msg){
+                $('#done').toggleClass('active');
                 alert( "Задание создано успешно" );
+            },
+            error: function(){
+                $('#done').toggleClass('active');
             }
         });
     });
