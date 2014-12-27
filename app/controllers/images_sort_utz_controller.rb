@@ -28,7 +28,7 @@ class ImagesSortUtzController < ApplicationController
     isAnswerRight = true
 
     pictures.each_with_index do |pic, index|
-      if pic.id != params['answer'][index]
+      if pic.id.to_s != params['answer'][index]
         isAnswerRight = false
         break
       end

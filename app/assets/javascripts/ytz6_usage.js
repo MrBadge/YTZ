@@ -12,12 +12,12 @@ $(document).ready(function() {
         images = [];
         for (var i = 0; i < rows.length; ++i) {
             var cells = rows[i].cells;
-            images.push(cells[0].firstChild.getAttribute('id'));
+            images.push($(cells[0]).find('img').attr('id'));
         }
         json.answer = images;
         $.ajax({
             type: "POST",
-            url: "/text_correction_utz/" + $('#utz_id').val() + "/check_answer",
+            url: "/images_sort_utz/" + $('#utz_id').val() + "/check_answer",
             data: json,
             success: function(msg) {
                 alert(msg);
