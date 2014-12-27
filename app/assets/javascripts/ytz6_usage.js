@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-    var el = document.getElementById('rows');
+    var el = document.getElementById('usage_rows');
     var sortable = Sortable.create(el, {
         draggable: ".drag"
     });
 
     $(document).on('click', '#task_done', function() {
-        var rows = $("#rows tr");
+        var rows = $("#usage_rows tr");
         //var counter = 1;
         var json = {};
         images = [];
@@ -15,14 +15,14 @@ $(document).ready(function() {
             images.push(cells[0].firstChild.getAttribute('id'));
         }
         json.answer = images;
-        /*$.ajax({
+        $.ajax({
             type: "POST",
             url: "/text_correction_utz/" + $('#utz_id').val() + "/check_answer",
             data: json,
             success: function(msg) {
                 alert(msg);
             }
-        });*/
+        });
     });
 
 });

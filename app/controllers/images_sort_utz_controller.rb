@@ -11,7 +11,7 @@ class ImagesSortUtzController < ApplicationController
                                level: level_dict[params['level']]
 
     params['images'].each_with_index do |src, index|
-      ImagesSortUtzPicture.create src: img, images_sort_utz_id: utz.id, ordering: index + 1
+      ImagesSortUtzPicture.create src: src, images_sort_utz_id: utz.id, ordering: index + 1
     end
 
     render nothing: true
@@ -19,6 +19,22 @@ class ImagesSortUtzController < ApplicationController
 
   def show
     @utz = ImagesSortUtz.find params[:id]
+    @pictures = @utz.pictures.order('RANDOM()')
+  end
+
+  def check_answer
+    pictures = ImagesSortUtzPicture.where(images_sort_utz_id: params[:id]).order(:ordering)
+
+    isAnswerRight = true
+
+    pictures.each_with_index do |pic, index|
+      if pic.id != params['answer'][index]
+        isAnswerRight = false
+        break
+      end
+    end
+
+    render text: isAnswerRight ? 'Верно' : 'Ошибка'
   end
 
   def destroy
