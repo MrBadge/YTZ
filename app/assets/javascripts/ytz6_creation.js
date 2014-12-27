@@ -7,7 +7,7 @@ $.fn.previewImg = function(img) {
         reader = new FileReader();
         reader.onload = function(e) {
             img.attr('src', e.target.result);
-            img.attr('style', 'width: 200; height: auto');
+            img.attr('style', 'width: auto; height: 150px; max-width: 280px');
         };
         reader.readAsDataURL($input.prop('files')[0]);
     }
@@ -86,7 +86,7 @@ $(document).ready(function() {
     });
 
     $('body').on('click', '.image_add', function(event) {
-        $(this).closest('tbody').find('input:file').click();
+        $(this).closest('tr').find('input:file').click();
     });
 
     function getRandomInt(min, max) {
@@ -119,4 +119,29 @@ $(document).ready(function() {
         $(this).parent().parent().parent().parent().remove();
     });
 
+    $("#done").click(function() {
+        var rows = $("#rows tr");
+        //var counter = 1;
+        var json = {};
+        images = [];
+        for (var i = 0; i < rows.length; ++i) {
+            var cells = rows[i].cells;
+            images.push(cells[1].firstChild.getAttribute('src'));
+        }
+        //var tmp = $('#level').editable();
+        json.images = images;
+        json.goal = $('#task_aim')[0].text == 'Введите цель задачи' ? '' : $('#task_aim')[0].text;
+        json.theme = $('#task_theme')[0].text == 'Введите тему задачи' ? '' : $('#task_theme')[0].text;
+        json.hint = $('#hint')[0].text;
+        json.level = $('#level').editable()[0].text; //change this into id
+        console.log(json);
+        $.ajax({
+            type: "POST",
+            url: "/images_sort_utz",
+            data: json,
+            success: function(msg){
+                alert( "Задание создано успешно" );
+            }
+        });
+    });
 });
