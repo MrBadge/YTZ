@@ -13,7 +13,7 @@ $(document).ready(function() {
         $('#question_title_usage').innerText = task.question;
         $('#question_title_usage')[0].setAttribute('question_id', task.q_id);
         for (var i = 0; i < shufled_arr.length; i++) {
-            $('#test_rows').append('<tr class="test_answer"><td><center><input type="checkbox"></center></td><td><button class="btn btn-default task" answer_id=' + shufled_arr[i].id + '>' + shufled_arr[i].text + '</button></td></tr>');
+            $('#test_rows').append('<tr class="test_answer"><td><center><input type="checkbox"></center></td><td><button class="btn btn-default task" id=' + shufled_arr[i].id + '>' + shufled_arr[i].text + '</button></td></tr>');
         };
     }
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
         for (var i = 0; i < rows.length; ++i) {
         	var checked = rows[i].children[0].children[0].children[0].checked;
             if (checked)
-                checked_answers.push(rows[i].children[1].children[0].getAttribute('answer_id'));
+                checked_answers.push(rows[i].children[1].children[0].getAttribute('id'));
         }
         result.checked_answers = checked_answers;
         alert(JSON.stringify(result));
