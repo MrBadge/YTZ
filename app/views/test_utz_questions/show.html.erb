@@ -38,7 +38,7 @@
                             </center>
                           </td>
                           <td>
-                            <button class="btn btn-default task" answer_id="2">
+                            <button class="btn btn-default task" data-answer-id="<%= answer.id %>">
                               <%= answer.text %>
                             </button>
                           </td>
@@ -66,9 +66,10 @@
   </div>
 </div>
 
+<%= hidden_field_tag :question_id, @question.id %>
 <%= link_to 'Назад', root_path %>
 
 <% content_for :head do %>
-    <%= stylesheet_link_tag    "ytz5_creation", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "ytz5_usage", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "ytz1_creation", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "ytz1_usage", "data-turbolinks-track" => true %>
 <% end %>

@@ -1,7 +1,7 @@
 class MatchingUtzController < ApplicationController
   def create
     level_dict = {'Легкий' => 1, 'Средний' => 2, 'Сложный' => 3}
-    utz = MatchingUtz.create name: "Task " + (MatchingUtz.count + 1).to_s, level: level_dict[params['level']],
+    utz = MatchingUtz.create name: "Задание " + (MatchingUtz.count + 1).to_s, level: level_dict[params['level']],
                           hint: params['hint']
     left = params['left']
     right = params['right']

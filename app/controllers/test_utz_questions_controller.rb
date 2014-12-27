@@ -18,6 +18,14 @@ class TestUtzQuestionsController < ApplicationController
     @question = TestUtzQuestion.find params[:id]
   end
 
+  def check_answer
+    question = TestUtzQuestion.find params[:id]
+
+    correct_answers = question.answers.where(is_correct: true).map { |q| q.id.to_s }
+
+    render text: (correct_answers.sort == params['checked_answers'].try(:sort) ? 'Верно' : 'Ошибка')
+  end
+
   def destroy
     TestUtzQuestion.find(params[:id]).destroy
     redirect_to root_path
